@@ -1,41 +1,184 @@
-{/* USER: intro, 3-4 sentences, what Keploy does and who this is for */}
+Keploy records the real API calls your service handles, together with the calls it makes to its dependencies, and turns them into test cases. You can then replay those tests without the dependencies running. In this tutorial I run Keploy against a small Go service that uses FastHttp and Postgres, record six requests, and replay them with no database. It is written for Go developers who have not used Keploy before.
+
+<RecordReplayDiagram />
 
 ## Why Keploy for Go developers
 
-{/* USER: your own explanation of the "why". Which pain does record/replay remove? */}
+Testing an HTTP service that talks to a database usually means writing the requests and expected responses by hand, and either running a real database or writing mocks for it. With Keploy I wrote none of that. I sent six `curl` requests to the running app, and Keploy produced six test cases plus the recorded database interactions.
+
+On replay, only the app and Keploy started. Postgres was not started, and the tests still passed. The recorded database responses stood in for it. That means tests like these can run on a laptop or in CI without database setup.
 
 ## Prerequisites
 
-{/* USER: WSL2, Docker Desktop with WSL integration, Go, Keploy, with the versions you used */}
+This is what I used. I ran everything inside WSL2 on Windows.
+
+| Tool | Version |
+|---|---|
+| OS | Ubuntu 26.04 LTS on WSL2 |
+| Go | 1.26.0 |
+| Docker | 29.7.2 (Docker Desktop with WSL integration) |
+| Keploy | 3.8.58 |
+
+<Callout type="warning" title="Enable Docker's WSL integration first">
+At first `docker` was not found inside Ubuntu. In Docker Desktop, open Settings, then Resources, then WSL integration, switch on your Ubuntu distro and click Apply. After that, `docker ps` worked from the Ubuntu terminal.
+</Callout>
+
+Clone the sample inside the Linux filesystem (for example `~/`), not under `/mnt/c`.
 
 ## Install Keploy
 
-{/* USER */}
+I used the install script from the Keploy docs. Check the [official installation page](https://keploy.io/docs) in case the method has changed.
+
+```bash title="terminal"
+curl --silent -O -L https://keploy.io/install.sh && source install.sh
+keploy --version
+```
+
+The version command printed `Keploy 3.8.58`.
 
 ## Clone and start the sample
 
-{/* USER: what the sample app does, how you started it */}
+The sample is `fasthttp-postgres` from Keploy's [samples-go](https://github.com/keploy/samples-go/tree/main/fasthttp-postgres) repository.
+
+```bash title="terminal"
+git clone https://github.com/keploy/samples-go.git
+cd samples-go/fasthttp-postgres
+go mod download
+```
+
+It is a small REST API for authors and books, listening on port 8080. A `docker-compose.yaml` starts the Go app (container `fasthttp_app`) and Postgres 10.5 (container `postgresDB`). Postgres is seeded from `migrations/init.sql`. The routes are:
+
+- `GET /authors`, `GET /books`, `GET /books/{id}`, `GET /authors/{id}`
+- `POST /authors`, `POST /books`
+
+<Callout type="info" title="Use the container name from the sample's README">
+The container name in this sample is `fasthttp_app`. The `--container-name` flag must match it, or Keploy will not find your app.
+</Callout>
+
+The repository already contained a `keploy/test-set-0` folder with three older test cases. I come back to that in the gotchas.
 
 ## Record your first test cases
 
-{/* USER: the requests you made and what Keploy did */}
+<Steps>
+<Step title="Start recording">
+
+In the sample folder, run the app under Keploy:
+
+```bash title="terminal 1"
+keploy record -c "docker compose up" --container-name=fasthttp_app
+```
+
+Keploy starts an agent next to the app, runs a proxy on port 16789 and a DNS server on port 26789, and prints `Keploy agent is ready to record test cases and mocks`. Once the app logs `Starting server: http://localhost:8080`, Keploy logs `Started ingress forwarding` for port 8080, and it is ready to capture requests.
+
+</Step>
+<Step title="Send some requests">
+
+In a second terminal, call the API:
+
+```bash title="terminal 2"
+curl -X POST -H "Content-Type: application/json" -d '{"name":"Author Name"}' http://localhost:8080/authors
+curl -X POST -H "Content-Type: application/json" -d '{"title":"Book Title","author_id":1}' http://localhost:8080/books
+curl -i http://localhost:8080/books
+curl -i http://localhost:8080/authors
+curl -i http://localhost:8080/books/1
+curl -i http://localhost:8080/authors/1
+```
+
+For each request, terminal 1 logged `Keploy has captured test cases for the user's application`, with names like `post-authors-1`, `post-books-1` and `get-books-by-id-1`.
+
+</Step>
+<Step title="Stop recording">
+
+Press Ctrl+C in terminal 1. Six test cases were saved to `keploy/test-set-1`.
+
+</Step>
+</Steps>
 
 ## What Keploy generated
 
-{/* USER: explain test-1.yaml and mocks.yaml in your own words */}
+```bash title="terminal"
+ls keploy/test-set-1
+# agent-debug.log  mocks.yaml  tests
+ls keploy/test-set-1/tests
+# get-authors-1.yaml  get-authors-by-id-1.yaml  get-books-1.yaml
+# get-books-by-id-1.yaml  post-authors-1.yaml  post-books-1.yaml
+```
+
+There is one YAML file per request in `tests/`, and a single `mocks.yaml` for everything the app talked to.
+
+### A test case
+
+`post-authors-1.yaml` holds the request I sent (method, URL, headers and body) and the response the app gave, which was `201 Created` with an empty body. It also has an assertion marking the `Date` header as noise, because it changes on every call and should not make a test fail. A ready-made `curl` command for the request is saved at the bottom of the file.
+
+```yaml title="keploy/test-set-1/tests/post-authors-1.yaml (excerpt)"
+spec:
+  req:
+    method: POST
+    url: http://localhost:8080/authors
+    body: '{"name":"Author Name"}'
+  resp:
+    status_code: 201
+    status_message: Created
+  assertions:
+    noise:
+      header.Date: []
+```
+
+### The mocks
+
+`mocks.yaml` contains nine recorded interactions: two DNS lookups for the hostname `postgres` (an `A` and an `AAAA` query) and seven `PostgresV3` entries, which are the app's conversations with the database. On replay these are what answers the app instead of a live Postgres.
 
 ## Replay the tests
 
-{/* USER: keploy test; point out that no real database was needed */}
+```bash title="terminal"
+keploy test -c "docker compose up" --container-name=fasthttp_app --delay 10 --test-sets test-set-1
+```
 
-## Break it on purpose
+`--delay 10` gives the app ten seconds to start before the first request is sent, and `--test-sets` limits the run to the set I recorded.
 
-{/* USER: optional: change something and show the failing diff */}
+Keploy logged that it was starting only the app and its agent, and that the app's calls to its dependencies would be served from recorded mocks. It named `postgres` as a service that was not started. The result was 6 passed, 0 failed, with no database container running.
+
+Keploy re-ran itself with `sudo` during replay, because replay in Docker needs elevated privileges. I did not have to prefix the command with `sudo` myself.
 
 ## Gotchas I hit
 
-{/* USER: real problems and fixes from your run */}
+<Accordion>
+<AccordionItem value="docker">
+<AccordionTrigger>docker: command not found in WSL</AccordionTrigger>
+<AccordionContent>
+
+Docker Desktop was installed but its WSL integration was not enabled for my Ubuntu distro. Enabling it under Settings, Resources, WSL integration fixed it.
+
+</AccordionContent>
+</AccordionItem>
+<AccordionItem value="old-test-set">
+<AccordionTrigger>The first replay failed on test-set-0</AccordionTrigger>
+<AccordionContent>
+
+My first replay ran every test set. It reported 3 of 9 tests failed, all from the sample's existing `test-set-0`, with status 500 instead of 200 or 201. The report said the DNS mocks for `postgres` did not match and suggested re-recording. That set was recorded in June 2024, and my own `test-set-1` passed 6 of 6. I limited later runs to my own set with `--test-sets test-set-1`.
+
+</AccordionContent>
+</AccordionItem>
+<AccordionItem value="name">
+<AccordionTrigger>The container name differs between guides</AccordionTrigger>
+<AccordionContent>
+
+This sample uses `fasthttp_app`. Use the name in the sample's own `docker-compose.yaml` and README.
+
+</AccordionContent>
+</AccordionItem>
+<AccordionItem value="upload">
+<AccordionTrigger>Mocks may be uploaded after a green run</AccordionTrigger>
+<AccordionContent>
+
+After a passing replay, Keploy's output said the mocks had been uploaded to the Keploy registry. The data here is only the sample's books and authors, but check what your own service would send before recording real data. Do not commit `mocks.yaml` to a public repository.
+
+</AccordionContent>
+</AccordionItem>
+</Accordion>
 
 ## Next steps
 
-{/* USER: links to Keploy docs and where to go next */}
+- Read the [Keploy documentation](https://keploy.io/docs) for the full list of options.
+- Browse the [fasthttp-postgres sample](https://github.com/keploy/samples-go/tree/main/fasthttp-postgres) and the other Go samples.
+- Try recording your own service the same way, then replay it without its dependencies.
