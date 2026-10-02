@@ -4,7 +4,7 @@ A single-page tutorial on recording and replaying API tests with [Keploy](https:
 [`fasthttp-postgres`](https://github.com/keploy/samples-go/tree/main/fasthttp-postgres) sample
 (FastHttp + Postgres, run with Docker Compose on WSL2).
 
-**Live site:** _add the Vercel URL after deploying_
+**Live site:** https://keploydevrel.vercel.app/
 
 ## Tech stack
 
