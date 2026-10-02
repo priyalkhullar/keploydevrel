@@ -22,14 +22,14 @@ export function CodeBlock({ children, ...props }: ComponentProps<"pre">) {
   return (
     <div className="code-block not-prose relative my-0 overflow-hidden rounded-lg border bg-muted/40">
       <div className="flex items-center justify-between border-b bg-muted/60 px-3 py-1.5 text-xs">
-        <span className="font-mono uppercase tracking-wide text-muted-foreground">
+        <span className="font-mono uppercase tracking-wide text-foreground/75">
           {language ?? "text"}
         </span>
         <button
           type="button"
           onClick={copy}
           aria-label={copied ? "Copied to clipboard" : "Copy code to clipboard"}
-          className="inline-flex items-center gap-1.5 rounded px-1.5 py-1 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="inline-flex items-center gap-1.5 rounded px-1.5 py-1 text-foreground/75 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           {copied ? <Check className="size-3.5" aria-hidden /> : <Copy className="size-3.5" aria-hidden />}
           <span aria-live="polite">{copied ? "Copied" : "Copy"}</span>

@@ -169,3 +169,7 @@ figure[data-rehype-pretty-code-figure] .code-block {
     scroll-behavior: smooth;
   }
 }
+/* darker green for light-theme code to reach WCAG AA contrast */
+span[style*="--shiki-light:#22863A"] {
+  --shiki-light: #176f2c !important;
+}
