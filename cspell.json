@@ -1,0 +1,6 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": ["Keploy", "FastHttp", "fasthttp", "Postgres", "MDX", "WSL2", "eBPF", "Shiki", "mocks", "curl", "Golang", "YAML", "yaml"],
+  "ignorePaths": ["node_modules", ".next", "package-lock.json"]
+}
