@@ -9,8 +9,7 @@ export function MobileToc() {
   const headings = useHeadings();
   const ref = useRef<HTMLDetailsElement>(null);
 
-  if (headings.length === 0) return <div className="lg:hidden" aria-hidden />;
-
+  // Always rendered (summary included) so filling in the list after mount causes no layout shift.
   return (
     <details ref={ref} className="group mb-8 rounded-lg border bg-muted/40 lg:hidden">
       <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-semibold [&::-webkit-details-marker]:hidden">
