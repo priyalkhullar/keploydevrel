@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 570" role="img" aria-labelledby="p5t p5d">
+  <title id="p5t">Panel 5: Now switch the database off.</title>
+  <desc id="p5d">A wall switch is flipped to OFF, the Postgres cylinder is asleep with closed eyes and an unplugged power cable, the Watcher holds a finger to its lips, and a red chip reads Postgres: not running.</desc>
+  <style>
+    :root {
+      --ink: #0F172A;
+      --bg: #FFF4EA;
+      --floor: #FFE6D2;
+      --card: #FFFFFF;
+      --orange: #F97316;
+      --indigo: #4F46E5;
+      --indigo-lt: #818CF8;
+      --green: #16A34A;
+      --red: #EF4444;
+      --tint: #FFDFC7;
+      --skin: #F2C29B;
+      --hair: #1E293B;
+      --desk: #334155;
+      --lap: #CBD5E1;
+      --screen: #1E293B;
+    }
+    .cm-s  { stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; stroke-linecap: round; }
+    .cm-s3 { stroke: var(--ink); stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+    .cm-ink { fill: var(--ink); }
+    .cm-bg { fill: var(--bg); } .cm-floor { fill: var(--floor); } .cm-card { fill: var(--card); }
+    .cm-or { fill: var(--orange); } .cm-in { fill: var(--indigo); } .cm-inlt { fill: var(--indigo-lt); }
+    .cm-gr { fill: var(--green); } .cm-red { fill: var(--red); }
+    .cm-tint { fill: var(--tint); } .cm-skin { fill: var(--skin); } .cm-hair { fill: var(--hair); }
+    .cm-desk { fill: var(--desk); } .cm-lap { fill: var(--lap); } .cm-screen { fill: var(--screen); }
+    .cm-t { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; font-weight: 800; fill: var(--ink); }
+    .cm-w { fill: #fff; }
+    .cm-sfx { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; font-weight: 800;
+           fill: var(--orange); stroke: var(--ink); stroke-width: 8; paint-order: stroke; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <pattern id="p5-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="2.3" fill="#F97316" opacity="0.35"/>
+    </pattern>
+    <clipPath id="p5-frame"><rect x="8" y="8" width="770" height="545" rx="14"/></clipPath>
+  </defs>
+
+  <!-- panel shadow + background -->
+  <rect x="20" y="20" width="770" height="545" rx="14" class="cm-ink"/>
+  <rect x="8" y="8" width="770" height="545" rx="14" class="cm-bg"/>
+
+  <g clip-path="url(#p5-frame)">
+    <!-- floor and halftone wall -->
+    <rect x="8" y="456" width="770" height="97" class="cm-floor"/>
+    <rect x="630" y="120" width="148" height="336" fill="url(#p5-dots)"/>
+
+    <!-- Wall Switch Flipped to OFF (Left) -->
+    <g transform="translate(60, 180)">
+      <!-- Switch shadow -->
+      <rect x="6" y="6" width="110" height="170" rx="12" class="cm-ink"/>
+      <!-- Switch plate -->
+      <rect x="0" y="0" width="110" height="170" rx="12" class="cm-card cm-s"/>
+      <!-- Mounting screws -->
+      <circle cx="55" cy="18" r="4" class="cm-ink"/>
+      <circle cx="55" cy="152" r="4" class="cm-ink"/>
+
+      <!-- Switch recessed track -->
+      <rect x="35" y="36" width="40" height="98" rx="8" fill="#0F172A"/>
+
+      <!-- ON label -->
+      <text x="55" y="55" text-anchor="middle" font-size="13" font-weight="800" fill="#94A3B8" class="cm-t">ON</text>
+
+      <!-- Toggle lever DOWN position (OFF) -->
+      <rect x="39" y="76" width="32" height="52" rx="6" class="cm-red cm-s"/>
+      <line x1="47" y1="102" x2="63" y2="102" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- OFF label (bold red highlight) -->
+      <text x="55" y="146" text-anchor="middle" font-size="14" font-weight="800" fill="#EF4444" class="cm-t">OFF</text>
+
+      <!-- Click arc action line -->
+      <path d="M118 70 Q130 95 118 120" stroke="var(--ink)" stroke-width="3.5" stroke-dasharray="5 4" fill="none"/>
+    </g>
+
+    <!-- The Watcher (Center - Finger to Lips / Shh Pose) -->
+    <g transform="translate(0, 0)">
+      <!-- Antenna -->
+      <path d="M340 190 V155" class="cm-s"/>
+      <circle cx="340" cy="146" r="11" class="cm-in cm-s"/>
+
+      <!-- Left arm by side -->
+      <path d="M270 260 Q250 275 260 295" class="cm-s" fill="none"/>
+      <circle cx="258" cy="295" r="9" class="cm-or cm-s"/>
+
+      <!-- Right Arm Raised: Finger to Lips gesture -->
+      <path d="M410 260 Q430 240 395 242" class="cm-s" fill="none"/>
+      <!-- Index Finger touching lens center/mouth -->
+      <circle cx="390" cy="242" r="8" class="cm-or cm-s"/>
+
+      <!-- Bot Body -->
+      <rect x="270" y="190" width="140" height="170" rx="28" class="cm-or cm-s"/>
+
+      <!-- Lens Eye (Quiet / Winking / Shh Expression) -->
+      <circle cx="340" cy="250" r="42" class="cm-card cm-s"/>
+      <!-- Winking / sneaky arc eye -->
+      <path d="M316 250 Q340 230 364 250" class="cm-s" fill="none"/>
+      <path d="M325 258 Q340 272 355 258" class="cm-s3"/>
+
+      <!-- Cheeks -->
+      <ellipse cx="305" cy="300" rx="8" ry="5" fill="#FFDFC7" opacity="0.9"/>
+      <ellipse cx="375" cy="300" rx="8" ry="5" fill="#FFDFC7" opacity="0.9"/>
+      <path d="M330 310 Q340 318 350 310" class="cm-s3"/>
+
+      <!-- "Shhh..." Speech Bubble -->
+      <path d="M380 140 H450 Q465 140 465 155 V165 Q465 180 450 180 H410 L395 195 L402 180 H380 Q365 180 365 165 V155 Q365 140 380 140 Z" class="cm-card cm-s"/>
+      <text x="415" y="165" text-anchor="middle" font-size="16" class="cm-t">Shhh...</text>
+    </g>
+
+    <!-- Postgres Database ASLEEP (Right) -->
+    <g transform="translate(0, 0)">
+      <!-- Sleeping ZZZ floating up right -->
+      <text x="680" y="180" font-size="34" class="cm-t" fill="var(--indigo)" transform="rotate(10 680 180)">Z</text>
+      <text x="715" y="145" font-size="26" class="cm-t" fill="var(--indigo)" transform="rotate(15 715 145)">z</text>
+      <text x="740" y="118" font-size="20" class="cm-t" fill="var(--indigo)" transform="rotate(20 740 118)">z</text>
+
+      <!-- Cylinder Base & Body (Faded/Grayish Indigo tint) -->
+      <path d="M550 230 V345 C550 370 690 370 690 345 V230 Z" class="cm-inlt cm-s"/>
+      <ellipse cx="620" cy="230" rx="70" ry="24" class="cm-inlt cm-s"/>
+
+      <!-- Cylinder Rib Divider -->
+      <path d="M550 287 C550 307 690 307 690 287" fill="none" class="cm-s"/>
+
+      <!-- Label Plate -->
+      <rect x="570" y="250" width="100" height="30" rx="6" class="cm-card cm-s"/>
+      <text x="620" y="271" text-anchor="middle" font-size="16" class="cm-t">Postgres</text>
+
+      <!-- Sleeping Eyes on Postgres Cylinder (- - closed eyes) -->
+      <path d="M590 305 L608 305 M632 305 L650 305" class="cm-s" stroke-width="4"/>
+      <!-- Sleepy mouth O -->
+      <circle cx="620" cy="322" r="5" class="cm-ink"/>
+
+      <!-- Status Indicator Off (Red LED) -->
+      <circle cx="570" cy="335" r="5" class="cm-red"/>
+
+      <!-- Unplugged Power Cable -->
+      <path d="M560 355 Q510 405 450 415" fill="none" stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
+      <!-- Plug block -->
+      <rect x="424" y="405" width="26" height="20" rx="4" class="cm-ink"/>
+      <!-- Two Prongs -->
+      <rect x="412" y="408" width="12" height="4" class="cm-ink"/>
+      <rect x="412" y="417" width="12" height="4" class="cm-ink"/>
+      <!-- Spark lines / disconnected symbol -->
+      <path d="M400 398 L390 408 M398 424 L388 428" class="cm-s3"/>
+    </g>
+
+    <!-- Status Chip Floating (Bottom Right) -->
+    <g transform="translate(510, 400)">
+      <rect x="4" y="4" width="210" height="36" rx="18" class="cm-ink"/>
+      <rect x="0" y="0" width="210" height="36" rx="18" class="cm-card cm-s"/>
+      <circle cx="22" cy="18" r="7" class="cm-red cm-s"/>
+      <text x="115" y="23" text-anchor="middle" font-size="14" font-weight="800" fill="#EF4444" class="cm-t">Postgres: not running</text>
+    </g>
+
+    <!-- Caption box + number badge -->
+    <rect x="40" y="40" width="460" height="84" rx="8" class="cm-ink"/>
+    <rect x="34" y="34" width="460" height="84" rx="8" class="cm-card cm-s"/>
+    <text x="66" y="70" font-size="24" class="cm-t">Now switch the</text>
+    <text x="66" y="102" font-size="24" class="cm-t">database off.</text>
+    <circle cx="34" cy="34" r="24" class="cm-or cm-s"/>
+    <text x="34" y="44" text-anchor="middle" font-size="28" class="cm-t cm-w">5</text>
+  </g>
+
+  <!-- panel border on top -->
+  <rect x="8" y="8" width="770" height="545" rx="14" fill="none" stroke="var(--ink)" stroke-width="6"/>
+</svg>

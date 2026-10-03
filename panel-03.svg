@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 570" role="img" aria-labelledby="p3t p3d">
+  <title id="p3t">Panel 3: Send six requests. Keploy writes the tests.</title>
+  <desc id="p3d">Six API request chips enter the Go app while six test cards pop out of the Watcher bot alongside a keploy record terminal chip and SFX CLICK!.</desc>
+  <style>
+    :root {
+      --ink: #0F172A;
+      --bg: #FFF4EA;
+      --floor: #FFE6D2;
+      --card: #FFFFFF;
+      --orange: #F97316;
+      --indigo: #4F46E5;
+      --indigo-lt: #818CF8;
+      --green: #16A34A;
+      --red: #EF4444;
+      --tint: #FFDFC7;
+      --skin: #F2C29B;
+      --hair: #1E293B;
+      --desk: #334155;
+      --lap: #CBD5E1;
+      --screen: #1E293B;
+    }
+    .cm-s  { stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; stroke-linecap: round; }
+    .cm-s3 { stroke: var(--ink); stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+    .cm-ink { fill: var(--ink); }
+    .cm-bg { fill: var(--bg); } .cm-floor { fill: var(--floor); } .cm-card { fill: var(--card); }
+    .cm-or { fill: var(--orange); } .cm-in { fill: var(--indigo); } .cm-inlt { fill: var(--indigo-lt); }
+    .cm-gr { fill: var(--green); } .cm-red { fill: var(--red); }
+    .cm-tint { fill: var(--tint); } .cm-skin { fill: var(--skin); } .cm-hair { fill: var(--hair); }
+    .cm-desk { fill: var(--desk); } .cm-lap { fill: var(--lap); } .cm-screen { fill: var(--screen); }
+    .cm-t { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; font-weight: 800; fill: var(--ink); }
+    .cm-w { fill: #fff; }
+    .cm-sfx { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; font-weight: 800;
+           fill: var(--orange); stroke: var(--ink); stroke-width: 8; paint-order: stroke; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <pattern id="p3-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="2.3" fill="#F97316" opacity="0.35"/>
+    </pattern>
+    <clipPath id="p3-frame"><rect x="8" y="8" width="770" height="545" rx="14"/></clipPath>
+  </defs>
+
+  <!-- panel shadow + background -->
+  <rect x="20" y="20" width="770" height="545" rx="14" class="cm-ink"/>
+  <rect x="8" y="8" width="770" height="545" rx="14" class="cm-bg"/>
+
+  <g clip-path="url(#p3-frame)">
+    <!-- floor and halftone wall -->
+    <rect x="8" y="456" width="770" height="97" class="cm-floor"/>
+    <rect x="630" y="120" width="148" height="336" fill="url(#p3-dots)"/>
+
+    <!-- Terminal chip top right -->
+    <g transform="translate(0, 0)">
+      <rect x="546" y="40" width="220" height="48" rx="8" class="cm-ink"/>
+      <rect x="540" y="34" width="220" height="48" rx="8" fill="#1E293B" class="cm-s"/>
+      <circle cx="558" cy="48" r="4" fill="#EF4444"/>
+      <circle cx="570" cy="48" r="4" fill="#F59E0B"/>
+      <circle cx="582" cy="48" r="4" fill="#16A34A"/>
+      <text x="558" y="68" font-size="14" font-family="monospace" font-weight="700" fill="#38BDF8">$ keploy record</text>
+    </g>
+
+    <!-- 6 Request Chips entering Go App (Left) -->
+    <g transform="translate(0, 0)">
+      <!-- 1. POST /authors -->
+      <g transform="translate(25, 142)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <rect x="6" y="5" width="48" height="24" rx="4" class="cm-or"/>
+        <text x="30" y="22" text-anchor="middle" font-size="11" font-weight="800" fill="#FFF" class="cm-t">POST</text>
+        <text x="100" y="22" text-anchor="middle" font-size="12" class="cm-t">/authors</text>
+        <path d="M152 17 H178 M170 11 L180 17 L170 23" class="cm-s3"/>
+      </g>
+      <!-- 2. POST /books -->
+      <g transform="translate(25, 186)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <rect x="6" y="5" width="48" height="24" rx="4" class="cm-or"/>
+        <text x="30" y="22" text-anchor="middle" font-size="11" font-weight="800" fill="#FFF" class="cm-t">POST</text>
+        <text x="100" y="22" text-anchor="middle" font-size="12" class="cm-t">/books</text>
+        <path d="M152 17 H178 M170 11 L180 17 L170 23" class="cm-s3"/>
+      </g>
+      <!-- 3. GET /books -->
+      <g transform="translate(25, 230)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <rect x="6" y="5" width="42" height="24" rx="4" class="cm-inlt"/>
+        <text x="27" y="22" text-anchor="middle" font-size="11" font-weight="800" fill="#0F172A" class="cm-t">GET</text>
+        <text x="100" y="22" text-anchor="middle" font-size="12" class="cm-t">/books</text>
+        <path d="M152 17 H178 M170 11 L180 17 L170 23" class="cm-s3"/>
+      </g>
+      <!-- 4. GET /authors -->
+      <g transform="translate(25, 274)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <rect x="6" y="5" width="42" height="24" rx="4" class="cm-inlt"/>
+        <text x="27" y="22" text-anchor="middle" font-size="11" font-weight="800" fill="#0F172A" class="cm-t">GET</text>
+        <text x="100" y="22" text-anchor="middle" font-size="12" class="cm-t">/authors</text>
+        <path d="M152 17 H178 M170 11 L180 17 L170 23" class="cm-s3"/>
+      </g>
+      <!-- 5. GET /books/1 -->
+      <g transform="translate(25, 318)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <rect x="6" y="5" width="42" height="24" rx="4" class="cm-inlt"/>
+        <text x="27" y="22" text-anchor="middle" font-size="11" font-weight="800" fill="#0F172A" class="cm-t">GET</text>
+        <text x="100" y="22" text-anchor="middle" font-size="12" class="cm-t">/books/1</text>
+        <path d="M152 17 H178 M170 11 L180 17 L170 23" class="cm-s3"/>
+      </g>
+      <!-- 6. GET /authors/1 -->
+      <g transform="translate(25, 362)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <rect x="6" y="5" width="42" height="24" rx="4" class="cm-inlt"/>
+        <text x="27" y="22" text-anchor="middle" font-size="11" font-weight="800" fill="#0F172A" class="cm-t">GET</text>
+        <text x="100" y="22" text-anchor="middle" font-size="12" class="cm-t">/authors/1</text>
+        <path d="M152 17 H178 M170 11 L180 17 L170 23" class="cm-s3"/>
+      </g>
+    </g>
+
+    <!-- Go App Box (Center Left) -->
+    <g transform="translate(0, 0)">
+      <rect x="225" y="210" width="125" height="170" rx="14" class="cm-in cm-s"/>
+      <rect x="225" y="210" width="125" height="38" rx="14" class="cm-ink"/>
+      <rect x="225" y="234" width="125" height="14" class="cm-ink"/>
+      <text x="287" y="235" text-anchor="middle" font-size="16" font-weight="800" fill="#FFF" class="cm-t">GO APP</text>
+      <rect x="242" y="260" width="90" height="24" rx="6" class="cm-card cm-s"/>
+      <text x="287" y="277" text-anchor="middle" font-size="14" font-weight="800" fill="#4F46E5" class="cm-t">:8080</text>
+      <!-- Status lights -->
+      <circle cx="250" cy="305" r="4" fill="#16A34A"/>
+      <circle cx="262" cy="305" r="4" fill="#F97316"/>
+      <circle cx="274" cy="305" r="4" class="cm-inlt"/>
+      <!-- Processing pulse -->
+      <rect x="242" y="325" width="60" height="8" rx="4" class="cm-or"/>
+      <rect x="242" y="340" width="40" height="8" rx="4" class="cm-inlt"/>
+    </g>
+
+    <!-- Flow Arrow from Go App to Watcher -->
+    <path d="M352 295 H385" class="cm-s"/>
+    <path d="M375 287 L390 295 L375 303" class="cm-s" fill="var(--ink)"/>
+
+    <!-- The Watcher (Center) -->
+    <g transform="translate(0, 0)">
+      <!-- Antenna -->
+      <path d="M455 190 V155" class="cm-s"/>
+      <circle cx="455" cy="146" r="11" class="cm-in cm-s"/>
+
+      <!-- Arms Active -->
+      <path d="M385 260 Q365 270 375 290" class="cm-s" fill="none"/>
+      <circle cx="373" cy="290" r="8" class="cm-or cm-s"/>
+      <path d="M525 260 Q545 240 555 255" class="cm-s" fill="none"/>
+      <circle cx="557" cy="255" r="8" class="cm-or cm-s"/>
+
+      <!-- Bot Body -->
+      <rect x="385" y="190" width="140" height="170" rx="28" class="cm-or cm-s"/>
+
+      <!-- Big Lens Eye (Excited) -->
+      <circle cx="455" cy="250" r="42" class="cm-card cm-s"/>
+      <circle cx="455" cy="250" r="28" class="cm-in"/>
+      <circle cx="455" cy="250" r="17" fill="#0F172A"/>
+      <circle cx="446" cy="241" r="7" fill="#FFFFFF"/>
+      <circle cx="465" cy="260" r="3.5" fill="#818CF8"/>
+
+      <!-- Excited Mouth & Cheeks -->
+      <ellipse cx="420" cy="300" rx="8" ry="5" fill="#FFDFC7" opacity="0.9"/>
+      <ellipse cx="490" cy="300" rx="8" ry="5" fill="#FFDFC7" opacity="0.9"/>
+      <path d="M440 305 Q455 322 470 305 Z" class="cm-ink"/>
+    </g>
+
+    <!-- 6 Test Cards popping out on the right -->
+    <g transform="translate(0, 0)">
+      <!-- Burst lines -->
+      <path d="M545 220 L565 210 M545 295 L570 295 M545 350 L565 365" class="cm-s3"/>
+
+      <!-- Test 1 -->
+      <g transform="translate(580, 142)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <circle cx="20" cy="17" r="10" class="cm-gr cm-s"/>
+        <path d="M15 17 L19 21 L26 13" stroke="#FFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <text x="88" y="22" text-anchor="middle" font-size="12" class="cm-t">test_1.yaml</text>
+      </g>
+      <!-- Test 2 -->
+      <g transform="translate(585, 186)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <circle cx="20" cy="17" r="10" class="cm-gr cm-s"/>
+        <path d="M15 17 L19 21 L26 13" stroke="#FFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <text x="88" y="22" text-anchor="middle" font-size="12" class="cm-t">test_2.yaml</text>
+      </g>
+      <!-- Test 3 -->
+      <g transform="translate(590, 230)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <circle cx="20" cy="17" r="10" class="cm-gr cm-s"/>
+        <path d="M15 17 L19 21 L26 13" stroke="#FFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <text x="88" y="22" text-anchor="middle" font-size="12" class="cm-t">test_3.yaml</text>
+      </g>
+      <!-- Test 4 -->
+      <g transform="translate(588, 274)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <circle cx="20" cy="17" r="10" class="cm-gr cm-s"/>
+        <path d="M15 17 L19 21 L26 13" stroke="#FFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <text x="88" y="22" text-anchor="middle" font-size="12" class="cm-t">test_4.yaml</text>
+      </g>
+      <!-- Test 5 -->
+      <g transform="translate(583, 318)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <circle cx="20" cy="17" r="10" class="cm-gr cm-s"/>
+        <path d="M15 17 L19 21 L26 13" stroke="#FFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <text x="88" y="22" text-anchor="middle" font-size="12" class="cm-t">test_5.yaml</text>
+      </g>
+      <!-- Test 6 -->
+      <g transform="translate(578, 362)">
+        <rect x="0" y="0" width="150" height="34" rx="6" class="cm-card cm-s"/>
+        <circle cx="20" cy="17" r="10" class="cm-gr cm-s"/>
+        <path d="M15 17 L19 21 L26 13" stroke="#FFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <text x="88" y="22" text-anchor="middle" font-size="12" class="cm-t">test_6.yaml</text>
+      </g>
+    </g>
+
+    <!-- Sound effect -->
+    <text x="670" y="125" text-anchor="middle" font-size="40" class="cm-sfx" transform="rotate(-6 670 125)">CLICK!</text>
+
+    <!-- Caption box + number badge -->
+    <rect x="40" y="40" width="460" height="84" rx="8" class="cm-ink"/>
+    <rect x="34" y="34" width="460" height="84" rx="8" class="cm-card cm-s"/>
+    <text x="66" y="70" font-size="24" class="cm-t">Send six requests.</text>
+    <text x="66" y="102" font-size="24" class="cm-t">Keploy writes the tests.</text>
+    <circle cx="34" cy="34" r="24" class="cm-or cm-s"/>
+    <text x="34" y="44" text-anchor="middle" font-size="28" class="cm-t cm-w">3</text>
+  </g>
+
+  <!-- panel border on top -->
+  <rect x="8" y="8" width="770" height="545" rx="14" fill="none" stroke="var(--ink)" stroke-width="6"/>
+</svg>

@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 570" role="img" aria-labelledby="p2t p2d">
+  <title id="p2t">Panel 2: Keploy sits between your app and its database.</title>
+  <desc id="p2d">The Watcher bot stands between the Go app and Postgres database with two-way traffic arrows through it, while a small developer in the corner asks "Who is that?".</desc>
+  <style>
+    :root {
+      --ink: #0F172A;
+      --bg: #FFF4EA;
+      --floor: #FFE6D2;
+      --card: #FFFFFF;
+      --orange: #F97316;
+      --indigo: #4F46E5;
+      --indigo-lt: #818CF8;
+      --green: #16A34A;
+      --red: #EF4444;
+      --tint: #FFDFC7;
+      --skin: #F2C29B;
+      --hair: #1E293B;
+      --desk: #334155;
+      --lap: #CBD5E1;
+      --screen: #1E293B;
+    }
+    .cm-s  { stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; stroke-linecap: round; }
+    .cm-s3 { stroke: var(--ink); stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+    .cm-ink { fill: var(--ink); }
+    .cm-bg { fill: var(--bg); } .cm-floor { fill: var(--floor); } .cm-card { fill: var(--card); }
+    .cm-or { fill: var(--orange); } .cm-in { fill: var(--indigo); } .cm-inlt { fill: var(--indigo-lt); }
+    .cm-gr { fill: var(--green); } .cm-red { fill: var(--red); }
+    .cm-tint { fill: var(--tint); } .cm-skin { fill: var(--skin); } .cm-hair { fill: var(--hair); }
+    .cm-desk { fill: var(--desk); } .cm-lap { fill: var(--lap); } .cm-screen { fill: var(--screen); }
+    .cm-t { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; font-weight: 800; fill: var(--ink); }
+    .cm-w { fill: #fff; }
+    .cm-sfx { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; font-weight: 800;
+           fill: var(--orange); stroke: var(--ink); stroke-width: 8; paint-order: stroke; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <pattern id="p2-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="2.3" fill="#F97316" opacity="0.35"/>
+    </pattern>
+    <clipPath id="p2-frame"><rect x="8" y="8" width="770" height="545" rx="14"/></clipPath>
+  </defs>
+
+  <!-- panel shadow + background -->
+  <rect x="20" y="20" width="770" height="545" rx="14" class="cm-ink"/>
+  <rect x="8" y="8" width="770" height="545" rx="14" class="cm-bg"/>
+
+  <g clip-path="url(#p2-frame)">
+    <!-- floor and halftone wall -->
+    <rect x="8" y="456" width="770" height="97" class="cm-floor"/>
+    <rect x="630" y="120" width="148" height="336" fill="url(#p2-dots)"/>
+
+    <!-- Go App Box (Left) -->
+    <g transform="translate(0, 0)">
+      <rect x="85" y="205" width="145" height="175" rx="14" class="cm-in cm-s"/>
+      <rect x="85" y="205" width="145" height="42" rx="14" class="cm-ink"/>
+      <rect x="85" y="233" width="145" height="14" class="cm-ink"/>
+      <text x="157" y="233" text-anchor="middle" font-size="18" font-weight="800" fill="#FFF" class="cm-t">GO APP</text>
+
+      <!-- Port pill -->
+      <rect x="108" y="262" width="100" height="26" rx="6" class="cm-card cm-s"/>
+      <text x="157" y="280" text-anchor="middle" font-size="15" font-weight="800" fill="#4F46E5" class="cm-t">:8080</text>
+
+      <!-- Server rack status lights -->
+      <circle cx="115" cy="310" r="5" fill="#16A34A"/>
+      <circle cx="130" cy="310" r="5" fill="#F97316"/>
+      <circle cx="145" cy="310" r="5" class="cm-inlt"/>
+
+      <!-- Code lines effect -->
+      <rect x="108" y="332" width="70" height="8" rx="4" class="cm-inlt"/>
+      <rect x="108" y="348" width="45" height="8" rx="4" fill="#CBD5E1"/>
+    </g>
+
+    <!-- Two-Way Traffic Arrows: Go App <-> Watcher -->
+    <!-- Top arrow (Request: Go App -> Watcher) -->
+    <path d="M240 248 H310" class="cm-s"/>
+    <path d="M300 240 L315 248 L300 256" class="cm-s" fill="var(--ink)"/>
+    <!-- Bottom arrow (Response: Watcher -> Go App) -->
+    <path d="M310 328 H240" class="cm-s"/>
+    <path d="M250 320 L235 328 L250 336" class="cm-s" fill="var(--ink)"/>
+
+    <!-- The Watcher (Center) -->
+    <g transform="translate(0, 0)">
+      <!-- Antenna -->
+      <path d="M400 190 V155" class="cm-s"/>
+      <circle cx="400" cy="146" r="11" class="cm-in cm-s"/>
+
+      <!-- Stubby Arms -->
+      <path d="M330 260 Q305 275 315 295" class="cm-s" fill="none"/>
+      <circle cx="313" cy="295" r="9" class="cm-or cm-s"/>
+      <path d="M470 260 Q495 275 485 295" class="cm-s" fill="none"/>
+      <circle cx="487" cy="295" r="9" class="cm-or cm-s"/>
+
+      <!-- Bot Body -->
+      <rect x="330" y="190" width="140" height="170" rx="28" class="cm-or cm-s"/>
+
+      <!-- Big Lens Eye -->
+      <circle cx="400" cy="250" r="42" class="cm-card cm-s"/>
+      <circle cx="400" cy="250" r="28" class="cm-in"/>
+      <circle cx="400" cy="250" r="17" fill="#0F172A"/>
+      <circle cx="391" cy="241" r="7" fill="#FFFFFF"/>
+      <circle cx="410" cy="260" r="3.5" fill="#818CF8"/>
+
+      <!-- Smile & Cheeks -->
+      <ellipse cx="365" cy="300" rx="8" ry="5" fill="#FFDFC7" opacity="0.9"/>
+      <ellipse cx="435" cy="300" rx="8" ry="5" fill="#FFDFC7" opacity="0.9"/>
+      <path d="M386 308 Q400 320 414 308" class="cm-s3"/>
+    </g>
+
+    <!-- Two-Way Traffic Arrows: Watcher <-> Postgres -->
+    <!-- Top arrow (Query: Watcher -> Postgres) -->
+    <path d="M480 248 H550" class="cm-s"/>
+    <path d="M540 240 L555 248 L540 256" class="cm-s" fill="var(--ink)"/>
+    <!-- Bottom arrow (Data: Postgres -> Watcher) -->
+    <path d="M550 328 H480" class="cm-s"/>
+    <path d="M490 320 L475 328 L490 336" class="cm-s" fill="var(--ink)"/>
+
+    <!-- Postgres Database (Right) -->
+    <g transform="translate(0, 0)">
+      <!-- Cylinder Body -->
+      <path d="M565 225 V340 C565 365 705 365 705 340 V225 Z" class="cm-inlt cm-s"/>
+      <ellipse cx="635" cy="225" rx="70" ry="24" class="cm-inlt cm-s"/>
+
+      <!-- Cylinder Rib Divider -->
+      <path d="M565 2825 C565 305 705 305 705 285" fill="none" class="cm-s"/>
+      <path d="M565 282 C565 302 705 302 705 282" fill="none" class="cm-s"/>
+
+      <!-- Label Plate -->
+      <rect x="585" y="252" width="100" height="30" rx="6" class="cm-card cm-s"/>
+      <text x="635" y="273" text-anchor="middle" font-size="16" class="cm-t">Postgres</text>
+
+      <!-- Status Indicator -->
+      <circle cx="585" cy="330" r="5" fill="#16A34A"/>
+    </g>
+
+    <!-- Small Curious Dev in Corner (Bottom Left) -->
+    <g transform="translate(10, 20)">
+      <!-- Dev Body -->
+      <path d="M35 440 Q35 375 75 365 Q115 375 115 440 Z" class="cm-in cm-s"/>
+      <path d="M68 375 L67 400 M82 375 L83 400" class="cm-s3"/>
+
+      <!-- Dev Head -->
+      <circle cx="75" cy="330" r="30" class="cm-skin cm-s"/>
+      <path d="M45 328 Q45 294 76 296 Q107 296 105 328 Q95 311 75 312 Q57 312 45 328 Z" class="cm-hair" style="stroke: var(--ink); stroke-width: 3.5; stroke-linejoin: round"/>
+
+      <!-- Curious Facial Expression -->
+      <circle cx="68" cy="328" r="3" class="cm-ink"/>
+      <circle cx="85" cy="328" r="3" class="cm-ink"/>
+      <path d="M63 320 L73 322 M80 320 L90 318" class="cm-s3"/>
+      <circle cx="77" cy="342" r="3.5" class="cm-ink"/>
+
+      <!-- Speech Bubble -->
+      <path d="M100 270 H200 Q215 270 215 288 V294 Q215 312 200 312 H145 L120 330 L128 312 H100 Q85 312 85 294 V288 Q85 270 100 270 Z" class="cm-card cm-s"/>
+      <text x="150" y="297" text-anchor="middle" font-size="16" class="cm-t">Who is that?</text>
+    </g>
+
+    <!-- Caption box + number badge -->
+    <rect x="40" y="40" width="480" height="84" rx="8" class="cm-ink"/>
+    <rect x="34" y="34" width="480" height="84" rx="8" class="cm-card cm-s"/>
+    <text x="66" y="70" font-size="24" class="cm-t">Keploy sits between</text>
+    <text x="66" y="102" font-size="24" class="cm-t">your app and its database.</text>
+    <circle cx="34" cy="34" r="24" class="cm-or cm-s"/>
+    <text x="34" y="44" text-anchor="middle" font-size="28" class="cm-t cm-w">2</text>
+  </g>
+
+  <!-- panel border on top -->
+  <rect x="8" y="8" width="770" height="545" rx="14" fill="none" stroke="var(--ink)" stroke-width="6"/>
+</svg>

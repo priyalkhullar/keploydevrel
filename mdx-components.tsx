@@ -2,9 +2,9 @@ import type { MDXComponents } from "mdx/types";
 import type { ComponentProps } from "react";
 import { Callout } from "@/components/callout";
 import { CodeBlock } from "@/components/code-block";
+import { ComicStory } from "@/components/comic-story";
 import { RecordReplayDiagram } from "@/components/record-replay-diagram";
 import { Step, Steps } from "@/components/steps";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Accordion,
   AccordionContent,
@@ -33,10 +33,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Steps,
     Step,
     RecordReplayDiagram,
-    Tabs,
-    TabsList,
-    TabsTrigger,
-    TabsContent,
+    ComicStory,
     Accordion,
     AccordionItem,
     AccordionTrigger,
@@ -44,3 +41,4 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
   };
 }
+

@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 570" role="img" aria-labelledby="p4t p4d">
+  <title id="p4t">Panel 4: Saved: six tests and nine mocks.</title>
+  <desc id="p4d">The Watcher bot presents a tests folder with six YAML cards and a mocks.yaml file with a 9 badge and tags 2 DNS and 7 Postgres while the developer smiles in approval.</desc>
+  <style>
+    :root {
+      --ink: #0F172A;
+      --bg: #FFF4EA;
+      --floor: #FFE6D2;
+      --card: #FFFFFF;
+      --orange: #F97316;
+      --indigo: #4F46E5;
+      --indigo-lt: #818CF8;
+      --green: #16A34A;
+      --red: #EF4444;
+      --tint: #FFDFC7;
+      --skin: #F2C29B;
+      --hair: #1E293B;
+      --desk: #334155;
+      --lap: #CBD5E1;
+      --screen: #1E293B;
+    }
+    .cm-s  { stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; stroke-linecap: round; }
+    .cm-s3 { stroke: var(--ink); stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+    .cm-ink { fill: var(--ink); }
+    .cm-bg { fill: var(--bg); } .cm-floor { fill: var(--floor); } .cm-card { fill: var(--card); }
+    .cm-or { fill: var(--orange); } .cm-in { fill: var(--indigo); } .cm-inlt { fill: var(--indigo-lt); }
+    .cm-gr { fill: var(--green); } .cm-red { fill: var(--red); }
+    .cm-tint { fill: var(--tint); } .cm-skin { fill: var(--skin); } .cm-hair { fill: var(--hair); }
+    .cm-desk { fill: var(--desk); } .cm-lap { fill: var(--lap); } .cm-screen { fill: var(--screen); }
+    .cm-t { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; font-weight: 800; fill: var(--ink); }
+    .cm-w { fill: #fff; }
+    .cm-sfx { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; font-weight: 800;
+           fill: var(--orange); stroke: var(--ink); stroke-width: 8; paint-order: stroke; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <pattern id="p4-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="2.3" fill="#F97316" opacity="0.35"/>
+    </pattern>
+    <clipPath id="p4-frame"><rect x="8" y="8" width="770" height="545" rx="14"/></clipPath>
+  </defs>
+
+  <!-- panel shadow + background -->
+  <rect x="20" y="20" width="770" height="545" rx="14" class="cm-ink"/>
+  <rect x="8" y="8" width="770" height="545" rx="14" class="cm-bg"/>
+
+  <g clip-path="url(#p4-frame)">
+    <!-- floor and halftone wall -->
+    <rect x="8" y="456" width="770" height="97" class="cm-floor"/>
+    <rect x="630" y="120" width="148" height="336" fill="url(#p4-dots)"/>
+
+    <!-- Developer Pleased (Left) -->
+    <g transform="translate(0, 20)">
+      <!-- Body -->
+      <path d="M40 440 Q40 330 100 315 Q160 330 160 440 Z" class="cm-in cm-s"/>
+      <path d="M88 328 L86 360 M114 328 L116 360" class="cm-s3"/>
+
+      <!-- Head -->
+      <circle cx="100" cy="265" r="42" class="cm-skin cm-s"/>
+      <path d="M54 262 Q54 212 102 214 Q148 214 146 262 Q130 236 100 238 Q74 238 54 262 Z" class="cm-hair" style="stroke: var(--ink); stroke-width: 4; stroke-linejoin: round"/>
+
+      <!-- Happy Smiling Face -->
+      <path d="M78 258 Q88 248 98 258 M112 258 Q122 248 132 258" class="cm-s3"/>
+      <path d="M84 280 Q105 300 126 280" class="cm-s3"/>
+      <!-- Cheeks -->
+      <ellipse cx="72" cy="275" rx="7" ry="4" fill="#FFDFC7" opacity="0.9"/>
+      <ellipse cx="138" cy="275" rx="7" ry="4" fill="#FFDFC7" opacity="0.9"/>
+    </g>
+
+    <!-- The Watcher Presenting Artifacts (Center) -->
+    <g transform="translate(0, 0)">
+      <!-- Antenna -->
+      <path d="M280 200 V165" class="cm-s"/>
+      <circle cx="280" cy="156" r="11" class="cm-in cm-s"/>
+
+      <!-- Presenting Arms -->
+      <path d="M210 270 Q190 290 205 310" class="cm-s" fill="none"/>
+      <circle cx="203" cy="310" r="8" class="cm-or cm-s"/>
+      <path d="M350 270 Q370 260 385 275" class="cm-s" fill="none"/>
+      <circle cx="387" cy="275" r="8" class="cm-or cm-s"/>
+
+      <!-- Bot Body -->
+      <rect x="210" y="200" width="140" height="170" rx="28" class="cm-or cm-s"/>
+
+      <!-- Big Proud Lens Eye -->
+      <circle cx="280" cy="260" r="42" class="cm-card cm-s"/>
+      <circle cx="280" cy="260" r="28" class="cm-in"/>
+      <circle cx="280" cy="260" r="17" fill="#0F172A"/>
+      <circle cx="271" cy="251" r="7" fill="#FFFFFF"/>
+      <circle cx="290" cy="270" r="3.5" fill="#818CF8"/>
+
+      <!-- Smile & Cheeks -->
+      <ellipse cx="245" cy="310" rx="8" ry="5" fill="#FFDFC7" opacity="0.9"/>
+      <ellipse cx="315" cy="310" rx="8" ry="5" fill="#FFDFC7" opacity="0.9"/>
+      <path d="M266 318 Q280 330 294 318" class="cm-s3"/>
+    </g>
+
+    <!-- Artifact 1: tests/ Folder with 6 YAML Cards (Center Right) -->
+    <g transform="translate(390, 160)">
+      <!-- Folder Back Shadow -->
+      <rect x="6" y="6" width="190" height="210" rx="12" class="cm-ink"/>
+
+      <!-- Folder Backing Plate -->
+      <path d="M0 16 H60 L75 32 H190 Q200 32 200 42 V210 Q200 220 190 220 H10 Q0 220 0 210 Z" class="cm-inlt cm-s"/>
+
+      <!-- Folder Title -->
+      <text x="20" y="24" font-size="16" class="cm-t" fill="#FFF">tests/</text>
+      <!-- "6" Count Badge -->
+      <rect x="150" y="8" width="36" height="20" rx="10" class="cm-gr cm-s"/>
+      <text x="168" y="23" text-anchor="middle" font-size="12" font-weight="800" fill="#FFF" class="cm-t">6</text>
+
+      <!-- Front Flap / Card Pocket -->
+      <rect x="0" y="38" width="200" height="182" rx="10" class="cm-card cm-s"/>
+
+      <!-- 6 Stacked YAML Cards inside tests/ folder -->
+      <g transform="translate(15, 52)">
+        <rect x="0" y="0" width="170" height="22" rx="4" class="cm-bg cm-s3" fill="var(--bg)"/>
+        <text x="10" y="15" font-size="11" class="cm-t">test_1.yaml</text>
+        <circle cx="155" cy="11" r="5" fill="#16A34A"/>
+
+        <rect x="0" y="26" width="170" height="22" rx="4" class="cm-bg cm-s3" fill="var(--bg)"/>
+        <text x="10" y="41" font-size="11" class="cm-t">test_2.yaml</text>
+        <circle cx="155" cy="37" r="5" fill="#16A34A"/>
+
+        <rect x="0" y="52" width="170" height="22" rx="4" class="cm-bg cm-s3" fill="var(--bg)"/>
+        <text x="10" y="67" font-size="11" class="cm-t">test_3.yaml</text>
+        <circle cx="155" cy="63" r="5" fill="#16A34A"/>
+
+        <rect x="0" y="78" width="170" height="22" rx="4" class="cm-bg cm-s3" fill="var(--bg)"/>
+        <text x="10" y="93" font-size="11" class="cm-t">test_4.yaml</text>
+        <circle cx="155" cy="89" r="5" fill="#16A34A"/>
+
+        <rect x="0" y="104" width="170" height="22" rx="4" class="cm-bg cm-s3" fill="var(--bg)"/>
+        <text x="10" y="119" font-size="11" class="cm-t">test_5.yaml</text>
+        <circle cx="155" cy="115" r="5" fill="#16A34A"/>
+
+        <rect x="0" y="130" width="170" height="22" rx="4" class="cm-bg cm-s3" fill="var(--bg)"/>
+        <text x="10" y="145" font-size="11" class="cm-t">test_6.yaml</text>
+        <circle cx="155" cy="141" r="5" fill="#16A34A"/>
+      </g>
+    </g>
+
+    <!-- Artifact 2: mocks.yaml File Card (Far Right) -->
+    <g transform="translate(610, 160)">
+      <!-- File Shadow -->
+      <rect x="6" y="6" width="150" height="220" rx="10" class="cm-ink"/>
+
+      <!-- File Base Card -->
+      <path d="M0 10 Q0 0 10 0 H115 L150 35 V210 Q150 220 140 220 H10 Q0 220 0 210 Z" class="cm-card cm-s"/>
+      <!-- Dog-ear fold -->
+      <path d="M115 0 V35 H150 Z" class="cm-tint cm-s"/>
+
+      <!-- File Header -->
+      <text x="15" y="28" font-size="15" class="cm-t">mocks.yaml</text>
+      <line x1="15" y1="36" x2="105" y2="36" stroke="var(--ink)" stroke-width="2"/>
+
+      <!-- "9" Badge -->
+      <circle cx="75" cy="90" r="28" class="cm-or cm-s"/>
+      <text x="75" y="100" text-anchor="middle" font-size="32" class="cm-t cm-w">9</text>
+      <text x="75" y="132" text-anchor="middle" font-size="11" font-weight="800" class="cm-t">MOCKS SAVED</text>
+
+      <!-- Tag Chips -->
+      <g transform="translate(12, 148)">
+        <!-- Tag 1: 2 DNS -->
+        <rect x="0" y="0" width="60" height="24" rx="6" class="cm-inlt cm-s3" fill="var(--indigo-lt)"/>
+        <text x="30" y="16" text-anchor="middle" font-size="10" font-weight="800" fill="#0F172A">2 DNS</text>
+
+        <!-- Tag 2: 7 Postgres -->
+        <rect x="66" y="0" width="60" height="24" rx="6" class="cm-tint cm-s3" fill="var(--tint)"/>
+        <text x="96" y="16" text-anchor="middle" font-size="9" font-weight="800" fill="#0F172A">7 Postgres</text>
+      </g>
+      <!-- Sparkle icons floating -->
+      <path d="M75 190 L78 182 L86 179 L78 176 L75 168 L72 176 L64 179 L72 182 Z" fill="#F97316"/>
+    </g>
+
+    <!-- Sparkles/shines around saved artifacts -->
+    <path d="M380 145 L384 135 L394 131 L384 127 L380 117 L376 127 L366 131 L376 135 Z" fill="#F97316"/>
+    <path d="M740 135 L743 127 L751 124 L743 121 L740 113 L737 121 L729 124 L737 127 Z" fill="#4F46E5"/>
+
+    <!-- Caption box + number badge -->
+    <rect x="40" y="40" width="460" height="84" rx="8" class="cm-ink"/>
+    <rect x="34" y="34" width="460" height="84" rx="8" class="cm-card cm-s"/>
+    <text x="66" y="70" font-size="24" class="cm-t">Saved: six tests</text>
+    <text x="66" y="102" font-size="24" class="cm-t">and nine mocks.</text>
+    <circle cx="34" cy="34" r="24" class="cm-or cm-s"/>
+    <text x="34" y="44" text-anchor="middle" font-size="28" class="cm-t cm-w">4</text>
+  </g>
+
+  <!-- panel border on top -->
+  <rect x="8" y="8" width="770" height="545" rx="14" fill="none" stroke="var(--ink)" stroke-width="6"/>
+</svg>

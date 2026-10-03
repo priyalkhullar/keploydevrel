@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 570" role="img" aria-labelledby="p6t p6d">
+  <title id="p6t">Panel 6: Replay: 6 passed, 0 failed.</title>
+  <desc id="p6d">A terminal card shows keploy test with six green check rows and 6 passed 0 failed summary, the Watcher wears a DB mask saying Postgres? That's me., and the developer gives a thumbs-up beside a green PASS! SFX.</desc>
+  <style>
+    :root {
+      --ink: #0F172A;
+      --bg: #FFF4EA;
+      --floor: #FFE6D2;
+      --card: #FFFFFF;
+      --orange: #F97316;
+      --indigo: #4F46E5;
+      --indigo-lt: #818CF8;
+      --green: #16A34A;
+      --red: #EF4444;
+      --tint: #FFDFC7;
+      --skin: #F2C29B;
+      --hair: #1E293B;
+      --desk: #334155;
+      --lap: #CBD5E1;
+      --screen: #1E293B;
+    }
+    .cm-s  { stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; stroke-linecap: round; }
+    .cm-s3 { stroke: var(--ink); stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+    .cm-ink { fill: var(--ink); }
+    .cm-bg { fill: var(--bg); } .cm-floor { fill: var(--floor); } .cm-card { fill: var(--card); }
+    .cm-or { fill: var(--orange); } .cm-in { fill: var(--indigo); } .cm-inlt { fill: var(--indigo-lt); }
+    .cm-gr { fill: var(--green); } .cm-red { fill: var(--red); }
+    .cm-tint { fill: var(--tint); } .cm-skin { fill: var(--skin); } .cm-hair { fill: var(--hair); }
+    .cm-desk { fill: var(--desk); } .cm-lap { fill: var(--lap); } .cm-screen { fill: var(--screen); }
+    .cm-t { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; font-weight: 800; fill: var(--ink); }
+    .cm-w { fill: #fff; }
+    .cm-sfx-gr { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; font-weight: 800;
+              fill: var(--green); stroke: var(--ink); stroke-width: 8; paint-order: stroke; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <pattern id="p6-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="2.3" fill="#F97316" opacity="0.35"/>
+    </pattern>
+    <clipPath id="p6-frame"><rect x="8" y="8" width="770" height="545" rx="14"/></clipPath>
+  </defs>
+
+  <!-- panel shadow + background -->
+  <rect x="20" y="20" width="770" height="545" rx="14" class="cm-ink"/>
+  <rect x="8" y="8" width="770" height="545" rx="14" class="cm-bg"/>
+
+  <g clip-path="url(#p6-frame)">
+    <!-- floor and halftone wall -->
+    <rect x="8" y="456" width="770" height="97" class="cm-floor"/>
+    <rect x="630" y="120" width="148" height="336" fill="url(#p6-dots)"/>
+
+    <!-- Terminal Card with Test Results (Left / Center-Left) -->
+    <g transform="translate(30, 145)">
+      <!-- Window Shadow -->
+      <rect x="8" y="8" width="330" height="280" rx="12" class="cm-ink"/>
+
+      <!-- Window Container -->
+      <rect x="0" y="0" width="330" height="280" rx="12" fill="#1E293B" class="cm-s"/>
+
+      <!-- Window Header Bar -->
+      <path d="M0 12 Q0 0 12 0 H318 Q330 0 330 12 V32 H0 Z" fill="#0F172A"/>
+      <line x1="0" y1="32" x2="330" y2="32" stroke="var(--ink)" stroke-width="2"/>
+
+      <!-- Control Dots -->
+      <circle cx="18" cy="16" r="4" fill="#EF4444"/>
+      <circle cx="30" cy="16" r="4" fill="#F59E0B"/>
+      <circle cx="42" cy="16" r="4" fill="#16A34A"/>
+      <text x="165" y="20" text-anchor="middle" font-size="11" font-family="monospace" font-weight="700" fill="#94A3B8">keploy test</text>
+
+      <!-- Terminal Content -->
+      <!-- Command prompt -->
+      <text x="18" y="54" font-size="13" font-family="monospace" font-weight="700" fill="#38BDF8">$ keploy test</text>
+
+      <!-- 6 Green Check Rows -->
+      <g font-family="monospace" font-size="11" font-weight="700">
+        <!-- Row 1 -->
+        <text x="18" y="78" fill="#16A34A">✓</text>
+        <text x="32" y="78" fill="#E2E8F0">test-1</text>
+        <text x="100" y="78" fill="#16A34A">PASSED</text>
+        <text x="155" y="78" fill="#64748B">(2ms)</text>
+
+        <!-- Row 2 -->
+        <text x="18" y="98" fill="#16A34A">✓</text>
+        <text x="32" y="98" fill="#E2E8F0">test-2</text>
+        <text x="100" y="98" fill="#16A34A">PASSED</text>
+        <text x="155" y="98" fill="#64748B">(3ms)</text>
+
+        <!-- Row 3 -->
+        <text x="18" y="118" fill="#16A34A">✓</text>
+        <text x="32" y="118" fill="#E2E8F0">test-3</text>
+        <text x="100" y="118" fill="#16A34A">PASSED</text>
+        <text x="155" y="118" fill="#64748B">(1ms)</text>
+
+        <!-- Row 4 -->
+        <text x="18" y="138" fill="#16A34A">✓</text>
+        <text x="32" y="138" fill="#E2E8F0">test-4</text>
+        <text x="100" y="138" fill="#16A34A">PASSED</text>
+        <text x="155" y="138" fill="#64748B">(2ms)</text>
+
+        <!-- Row 5 -->
+        <text x="18" y="158" fill="#16A34A">✓</text>
+        <text x="32" y="158" fill="#E2E8F0">test-5</text>
+        <text x="100" y="158" fill="#16A34A">PASSED</text>
+        <text x="155" y="158" fill="#64748B">(4ms)</text>
+
+        <!-- Row 6 -->
+        <text x="18" y="178" fill="#16A34A">✓</text>
+        <text x="32" y="178" fill="#E2E8F0">test-6</text>
+        <text x="100" y="178" fill="#16A34A">PASSED</text>
+        <text x="155" y="178" fill="#64748B">(2ms)</text>
+      </g>
+
+      <line x1="18" y1="195" x2="312" y2="195" stroke="#334155" stroke-width="1.5"/>
+
+      <!-- Highlighted Summary Banner -->
+      <rect x="18" y="210" width="294" height="34" rx="6" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="2"/>
+      <text x="165" y="232" text-anchor="middle" font-size="14" font-family="monospace" font-weight="800" fill="#4ADE80">6 passed · 0 failed</text>
+    </g>
+
+    <!-- The Watcher wearing "DB" Mask (Center-Right) -->
+    <g transform="translate(0, 0)">
+      <!-- Antenna -->
+      <path d="M465 200 V165" class="cm-s"/>
+      <circle cx="465" cy="156" r="11" class="cm-in cm-s"/>
+
+      <!-- Stubby Arms (Proud stance) -->
+      <path d="M395 270 Q375 285 385 305" class="cm-s" fill="none"/>
+      <circle cx="383" cy="305" r="8" class="cm-or cm-s"/>
+      <path d="M535 270 Q555 285 545 305" class="cm-s" fill="none"/>
+      <circle cx="547" cy="305" r="8" class="cm-or cm-s"/>
+
+      <!-- Bot Body -->
+      <rect x="395" y="200" width="140" height="170" rx="28" class="cm-or cm-s"/>
+
+      <!-- Big Lens Eye behind DB mask -->
+      <circle cx="465" cy="260" r="42" class="cm-card cm-s"/>
+      <circle cx="465" cy="260" r="28" class="cm-in"/>
+
+      <!-- DB Mask tied over Watcher eye -->
+      <!-- Mask String -->
+      <path d="M395 260 H535" class="cm-s3"/>
+      <!-- Cylinder Cardboard DB Mask Plate -->
+      <rect x="420" y="236" width="90" height="48" rx="8" class="cm-card cm-s"/>
+      <text x="465" y="269" text-anchor="middle" font-size="24" class="cm-t" fill="var(--indigo)">DB</text>
+
+      <!-- Cheeks & Smile -->
+      <ellipse cx="430" cy="310" rx="8" ry="5" fill="#FFDFC7" opacity="0.9"/>
+      <ellipse cx="500" cy="310" rx="8" ry="5" fill="#FFDFC7" opacity="0.9"/>
+      <path d="M451 318 Q465 330 479 318" class="cm-s3"/>
+
+      <!-- Speech Bubble: "Postgres? That's me." -->
+      <path d="M420 130 H550 Q565 130 565 148 V158 Q565 176 550 176 H495 L475 196 L482 176 H420 Q405 176 405 158 V148 Q405 130 420 130 Z" class="cm-card cm-s"/>
+      <text x="485" y="159" text-anchor="middle" font-size="16" class="cm-t">Postgres? That's me.</text>
+    </g>
+
+    <!-- Developer Thumbs-Up (Right) -->
+    <g transform="translate(0, 20)">
+      <!-- Body -->
+      <path d="M600 440 Q600 330 660 315 Q720 330 720 440 Z" class="cm-in cm-s"/>
+      <path d="M648 328 L646 360 M674 328 L676 360" class="cm-s3"/>
+
+      <!-- Head -->
+      <circle cx="660" cy="265" r="42" class="cm-skin cm-s"/>
+      <path d="M614 262 Q614 212 662 214 Q708 214 706 262 Q690 236 660 238 Q634 238 614 262 Z" class="cm-hair" style="stroke: var(--ink); stroke-width: 4; stroke-linejoin: round"/>
+
+      <!-- Facial expression: happy closed eyes & big smile -->
+      <path d="M638 258 Q648 248 658 258 M672 258 Q682 248 692 258" class="cm-s3"/>
+      <path d="M644 280 Q665 302 686 280" class="cm-s3"/>
+
+      <!-- Thumbs-up Arm & Hand -->
+      <path d="M615 345 Q575 355 570 305" fill="none" stroke="var(--ink)" stroke-width="24" stroke-linecap="round"/>
+      <path d="M615 345 Q575 355 570 305" fill="none" stroke="var(--indigo)" stroke-width="14" stroke-linecap="round"/>
+
+      <g transform="translate(570, 305)">
+        <circle cx="0" cy="0" r="13" class="cm-skin cm-s3" style="fill: var(--skin)"/>
+        <!-- Thumb pointing up -->
+        <path d="M0 0 V-24" stroke="var(--ink)" stroke-width="12" stroke-linecap="round"/>
+        <path d="M0 0 V-24" stroke="var(--skin)" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="0" cy="-24" r="4.5" fill="var(--skin)"/>
+      </g>
+    </g>
+
+    <!-- Green SFX "PASS!" -->
+    <text x="690" y="160" text-anchor="middle" font-size="44" class="cm-sfx-gr" transform="rotate(-6 690 160)">PASS!</text>
+
+    <!-- Caption box + number badge -->
+    <rect x="40" y="40" width="440" height="84" rx="8" class="cm-ink"/>
+    <rect x="34" y="34" width="440" height="84" rx="8" class="cm-card cm-s"/>
+    <text x="66" y="70" font-size="24" class="cm-t">Replay:</text>
+    <text x="66" y="102" font-size="24" class="cm-t">6 passed, 0 failed.</text>
+    <circle cx="34" cy="34" r="24" class="cm-or cm-s"/>
+    <text x="34" y="44" text-anchor="middle" font-size="28" class="cm-t cm-w">6</text>
+  </g>
+
+  <!-- panel border on top -->
+  <rect x="8" y="8" width="770" height="545" rx="14" fill="none" stroke="var(--ink)" stroke-width="6"/>
+</svg>
