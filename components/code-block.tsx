@@ -28,16 +28,21 @@ export function CodeBlock({ children, ...props }: ComponentProps<"pre">) {
         <button
           type="button"
           onClick={copy}
-          aria-label={copied ? "Copied to clipboard" : "Copy code to clipboard"}
-          className="inline-flex items-center gap-1.5 rounded px-1.5 py-1 text-foreground/75 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          aria-label="Copy code"
+          className="inline-flex items-center gap-1.5 rounded px-1.5 py-1 text-foreground/75 transition-colors hover:text-foreground"
         >
           {copied ? <Check className="size-3.5" aria-hidden /> : <Copy className="size-3.5" aria-hidden />}
-          <span aria-live="polite">{copied ? "Copied" : "Copy"}</span>
+          <span aria-hidden>{copied ? "Copied" : "Copy"}</span>
         </button>
+        <span role="status" aria-live="polite" className="sr-only">
+          {copied ? "Copied" : ""}
+        </span>
       </div>
       <pre
         ref={preRef}
         {...props}
+        role="group"
+        aria-label={`Code: ${language ?? "text"}`}
         className="m-0 overflow-x-auto bg-transparent p-4 font-mono text-[0.85rem] leading-relaxed"
         tabIndex={0}
       >

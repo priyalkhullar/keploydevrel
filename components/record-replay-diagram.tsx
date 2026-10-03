@@ -31,7 +31,7 @@ export function RecordReplayDiagram() {
         <Defs />
 
         {/* RECORD */}
-        <text x="10" y="22" className="fill-orange-600 dark:fill-orange-400 text-[12px] font-semibold tracking-wider">RECORD</text>
+        <text x="10" y="22" className="fill-orange-700 dark:fill-orange-400 text-[12px] font-semibold tracking-wider">RECORD</text>
         <rect x="10" y="40" width="86" height="48" rx="8" className={box} />
         <text x="53" y="69" textAnchor="middle" className={label}>Client</text>
         <rect x="137" y="40" width="86" height="48" rx="8" className={box} />
@@ -49,7 +49,7 @@ export function RecordReplayDiagram() {
         <line x1="10" y1="206" x2="350" y2="206" className="stroke-border" />
 
         {/* REPLAY */}
-        <text x="10" y="236" className="fill-orange-600 dark:fill-orange-400 text-[12px] font-semibold tracking-wider">REPLAY</text>
+        <text x="10" y="236" className="fill-orange-700 dark:fill-orange-400 text-[12px] font-semibold tracking-wider">REPLAY</text>
         <rect x="10" y="254" width="86" height="48" rx="8" className="fill-orange-500/10 stroke-orange-500" />
         <text x="53" y="283" textAnchor="middle" className="fill-orange-700 dark:fill-orange-300 text-[13px] font-semibold">Keploy</text>
         <rect x="137" y="254" width="86" height="48" rx="8" className={box} />

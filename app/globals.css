@@ -173,3 +173,33 @@ figure[data-rehype-pretty-code-figure] .code-block {
 span[style*="--shiki-light:#22863A"] {
   --shiki-light: #176f2c !important;
 }
+
+/* accessibility: color-scheme, focus rings, reduced motion, code contrast */
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+:where(a, button, summary, [tabindex="0"]):focus-visible {
+  outline: 2px solid #c2410c;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.dark :where(a, button, summary, [tabindex="0"]):focus-visible {
+  outline-color: #fb923c;
+}
+/* Shiki comment grey is below 4.5:1 on the dark code background */
+span[style*="--shiki-dark:#6A737D"] {
+  --shiki-dark: #9aa4af !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
